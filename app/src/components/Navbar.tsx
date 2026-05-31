@@ -1,8 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const Navbar = () => {
-    const [loggedIn, setIsLoggedIn] = useState(false);
+interface NavBarProps {
+    loggedIn: Boolean;
+    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar = ({ loggedIn, setIsLoggedIn } : NavBarProps) => {
 
     const logout = () => {
         setIsLoggedIn(false);
