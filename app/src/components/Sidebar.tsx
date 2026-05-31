@@ -1,6 +1,6 @@
 const Sidebar = () => {
     
-    const pups = ["Pup1", "Pup2", "Pup3"];
+    const pups : Array<String> = ["Pup1", "Pup2", "Pup3"];
 
     return (
         <>

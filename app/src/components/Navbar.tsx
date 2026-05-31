@@ -1,9 +1,11 @@
 // import { Link } from "react-router-dom";
 
-interface NavBarProps {
-    loggedIn: Boolean;
-    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface NavBarProps {
+//     loggedIn: Boolean;
+//     setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+// }
+
+import { type NavBarProps } from "../types";
 
 const Navbar = ({ loggedIn, setIsLoggedIn } : NavBarProps) => {
 
