@@ -12,7 +12,7 @@ export interface FormData {
 
 export interface InputFormProps {
     initialData: FormData;
-    httpType: "POST" | "PUT" | "PATCH";
+    httpType: "post" | "put" | "patch";
     onSubmit: (data: FormData) => void | Promise<void>;
     onCancel: () => void;
     formFields: FormField[];
