@@ -5,7 +5,16 @@ export const USER_FORM = [
     { name: "last_name", label: "last_name", type:"text", },
     { name: "password1", label: "password1", type:"text", },
     { name: "password2", label: "password2", type:"text", }
-]
+];
+
+export const USER = {
+    username: '',
+    email: '',
+    first_name: '',
+    last_name: '',
+    password1: '',
+    password2: ''
+}
 
 export const PUP_FORM = [
     { name: "pup_name", label: "Pup Name", type: "text", placeholder: "Pup Name", required: true },
@@ -14,6 +23,24 @@ export const PUP_FORM = [
     { name: "akc_registration_number", label: "AKC Registration Number", type: "text", placeholder: "AKC Registration Number", required: true },
     { name: "akc_registration_name", label: "AKC Registration Name", type: "text", placeholder: "AKC Registration Name", required: false },
 ];
+
+export const PUP = {        
+    pup_name: '',
+    pup_sex: '',
+    microchip_number: '',
+    akc_registration_number: '',
+    akc_registration_name: ''
+};
+
+export const RECORD = {
+    record_type: '',
+    record_date: '',
+    doctor_name: '',
+    vet_address: '',
+    vet_phone_number: '',
+    cost: '',
+    record_note: ''
+}
 
 export const PUP_RECORD_FORM = [
     { name: "record_type", label: "Record Type", type: "text", placeholder: "Record Type", required: true },

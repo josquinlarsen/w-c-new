@@ -18,6 +18,7 @@ export default function Form({
 
     const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        
         setFormData({
             ...formData,
             [name]:value,
@@ -44,7 +45,7 @@ export default function Form({
                                 type={field.type}
                                 name={field.name}
                                 placeholder={field.placeholder}
-                                value={formData[field.name] || ""}
+                                value={formData[field.name] || ""} 
                                 onChange={handleChange}
                                 required={field.required}
                             />

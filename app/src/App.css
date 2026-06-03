@@ -49,3 +49,40 @@ nav a {
     align-items: center;
     justify-content: space-between;
 }
+
+/* FORM */
+form{
+    width: 90%;
+    max-width: 40rem;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 1rem auto;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    font-size: 90%;
+    color: lightblue;
+    text-transform: uppercase;
+}
+
+label.required:after{
+    content:"*"; 
+    color:red;
+}
+
+fieldset{
+    border: none;
+}
+
+input {
+    font-family: "Nunito Sans", sans-serif ;
+    font-size: 110%;
+    padding:1%;
+    margin:1%;
+    width: 14rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: gray;
+}
