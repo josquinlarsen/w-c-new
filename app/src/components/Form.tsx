@@ -32,29 +32,30 @@ export default function Form({
 
     return (
         <>
+        <div className="form-container">
         <div>
-            <h2>{title}</h2>
-                <button type="button" onClick={onCancel}>Go Back</button>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <fieldset>
-                    {formFields.map((field) => (
-                        <div key={field.name}>
-                            <label htmlFor={field.name}>{field.label}</label>
-                            <input
-                                type={field.type}
-                                name={field.name}
-                                placeholder={field.placeholder}
-                                value={formData[field.name] || ""} 
-                                onChange={handleChange}
-                                required={field.required}
-                            />
-                        </div>
-                    ))}
-                    <button type='submit'>{httpType === 'post' ? 'Add' : 'Save'}</button>
-                </fieldset>
-            </form>
-
+        <h2>{title}</h2>
+            <button type="button" onClick={onCancel}>Go Back</button>
+        </div>
+        <form onSubmit={handleSubmit}>
+            <fieldset>
+                {formFields.map((field) => (
+                    <div key={field.name}>
+                        <label htmlFor={field.name}>{field.label}</label>
+                        <input
+                            type={field.type}
+                            name={field.name}
+                            placeholder={field.placeholder}
+                            value={formData[field.name] || ""} 
+                            onChange={handleChange}
+                            required={field.required}
+                        />
+                    </div>
+                ))}
+                <button type='submit'>{httpType === 'post' ? 'Add' : 'Save'}</button>
+            </fieldset>
+        </form>
+        </div>
         </>
     )
 };

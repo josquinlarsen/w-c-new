@@ -51,11 +51,17 @@ nav a {
 }
 
 /* FORM */
-form{
+.form-container {
+    border: 2px solid black;
+    min-width:25rem;
+    padding-left: 1rem;
+}
+form {
     width: 90%;
     max-width: 40rem;
     font-family: "Nunito Sans", sans-serif;
-    margin: 1rem auto;
+    margin: 1% auto;
+    
 }
 
 label {
