@@ -17,12 +17,9 @@ function App() {
 
   return (
     <>
-    <Navbar 
-      loggedIn={loggedIn}
-      setIsLoggedIn={setIsLoggedIn}
-    />
+    <Navbar/>
     <main>
-      {loggedIn? (
+      {!loggedIn? (
         <div className='main-content'>
         <Sidebar />
         <div style={{padding:"1%"}}>

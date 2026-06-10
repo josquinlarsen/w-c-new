@@ -1,9 +1,9 @@
 // import { Link } from "react-router-dom";
 
-import { type NavBarProps } from "../types";
+// import { type NavBarProps } from "../types";
 import { useAuth } from "../context/AuthContext";
 
-const Navbar = ({ loggedIn, setIsLoggedIn } : NavBarProps) => {
+const Navbar = () => {
     const { isLoggedIn, logout } = useAuth();
 
     // const logout = () => {
@@ -11,20 +11,19 @@ const Navbar = ({ loggedIn, setIsLoggedIn } : NavBarProps) => {
     // }
 
     const login = () => {
-        setIsLoggedIn(true);
+        console.log("logged in!");
+        // setIsLoggedIn(true);
     }
 
     return (
         <>
         <div className="navbar">
-        <header>
             <div>
                 <h1>Wally & Coda</h1>
             </div>
-        </header>
         <div>
             <nav>
-                {loggedIn? (
+                {isLoggedIn? (
                     <>
                     <a>Account</a>
                     <button

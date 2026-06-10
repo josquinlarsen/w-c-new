@@ -5,8 +5,7 @@ import type { AuthContextProps, AuthContextType } from "../types";
 
 import api from "../api/client";
 
-// | undefined ?
-const AuthContext = createContext<AuthContextType>(); 
+const AuthContext = createContext<AuthContextType | undefined>(undefined); 
 
 export const AuthProvider = ({children}: AuthContextProps) => {
     const navigate = useNavigate();
@@ -78,4 +77,10 @@ export const AuthProvider = ({children}: AuthContextProps) => {
     );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = (): AuthContextType => {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error("useAuth must be used inside AuthProvider");
+    }
+    return context;
+};
