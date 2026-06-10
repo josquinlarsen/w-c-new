@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 
 import './App.css'
 import Navbar from './components/Navbar'

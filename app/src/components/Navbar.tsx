@@ -1,12 +1,14 @@
 // import { Link } from "react-router-dom";
 
 import { type NavBarProps } from "../types";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = ({ loggedIn, setIsLoggedIn } : NavBarProps) => {
+    const { isLoggedIn, logout } = useAuth();
 
-    const logout = () => {
-        setIsLoggedIn(false);
-    }
+    // const logout = () => {
+    //     setIsLoggedIn(false);
+    // }
 
     const login = () => {
         setIsLoggedIn(true);
