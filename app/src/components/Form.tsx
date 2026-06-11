@@ -9,8 +9,7 @@ export default function Form({
     onCancel,
     formFields,
     title,
-    login,
-    register
+    userAction,
 }: InputFormProps) {
     const [formData, setFormData] = useState<FormData>(initialData);
 
@@ -54,7 +53,12 @@ export default function Form({
                         />
                     </div>
                 ))}
-                <button type='submit'>{httpType === 'post' ? 'Add' : 'Save'}</button>
+                { userAction? (
+                    <button type='submit'>{userAction === 1 ? "login" : "register" }</button>
+                ) : (
+                    <button type='submit'>{httpType === 'post' ? 'Add' : 'Save'}</button>
+                )}
+                {/* <button type='submit'>{httpType === 'post' ? 'Add' : 'Save'}</button> */}
             </fieldset>
         </form>
         </div>

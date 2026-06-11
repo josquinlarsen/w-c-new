@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // import { type NavBarProps } from "../types";
 import { useAuth } from "../context/AuthContext";
@@ -19,13 +19,17 @@ const Navbar = () => {
         <>
         <div className="navbar">
             <div>
-                <h1>Wally & Coda</h1>
+                <h1>
+                    <Link to={isLoggedIn ? "/home" : "/"}>
+                        Wally & Coda
+                    </Link>
+                </h1>
             </div>
         <div>
             <nav>
                 {isLoggedIn? (
                     <>
-                    <a>Account</a>
+                    <Link to="/home">Account</Link>
                     <button
                         className="logout-btn"
                         onClick={logout}
@@ -34,10 +38,11 @@ const Navbar = () => {
                 ) : (
                     <>
                     <a>Account</a>
-                    <button
+                    <Link to="/login">Login</Link>
+                    {/* <button
                         className="logout-btn"
                         onClick={login}
-                    >Login</button>
+                    >Login</button> */}
                     </>
                 )}
             </nav>

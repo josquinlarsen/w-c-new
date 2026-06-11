@@ -1,6 +1,7 @@
 import Sidebar from "./Sidebar";
 import Form from "./Form";
 import Table from "./Table";
+import Login from "./Login";
 
 import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from '../utilities/FormFields';
 import { pupRecordsCall } from "../mockData/records";
@@ -12,6 +13,7 @@ const Dashboard = () => {
         <div className="main-content">
             <Sidebar />
         <div style={{padding: "1%"}}>
+            {/* <Login/> */}
             {/* <Form 
                 initialData={RECORD}
                 httpType={"post"}

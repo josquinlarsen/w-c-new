@@ -22,7 +22,7 @@ const Table = ({records}: PupRecordAPIResponse) => {
                     <tr key={record.id}>
                         <td>{record.record_type}</td>
                         <td><FormatDate date={record.record_date}/></td>
-                        <td>Dr. {record.doctor_name}</td>
+                        <td>{record.doctor_name}</td>
                         <td>{record.vet_address}</td>
                         <td>{record.vet_phone_number}</td>
                         <td>${record.cost}</td>

@@ -11,12 +11,12 @@ import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from './utili
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState<boolean>(false);
-
 
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         {/* public routes */}
         <Route path="register" />
-        <Route path="login"/>
+        <Route path="login" element={<Login/>}/>
         <Route path="home" element={<Dashboard />}/>
         
         <Route element={<ProtectedRoute />}>

@@ -1,3 +1,4 @@
+import type { ChangeEvent, SubmitEvent } from "react";
 export interface FormField {
     name: string;
     label: string;
@@ -13,10 +14,10 @@ export interface FormData {
 export interface InputFormProps {
     initialData: FormData;
     httpType: "post" | "put" | "patch";
-    onSubmit: (data: FormData) => void | Promise<void>;
-    onCancel: () => void;
+    onSubmit: (data: FormData | SubmitEvent<HTMLFormElement>) => void | Promise<void>;
+    onCancel?: () => void;
     formFields: FormField[];
     title: string;
-    login: boolean;
-    register: boolean;
+    handleLoginChange? : (data: ChangeEvent<HTMLInputElement>) => void;
+    userAction?: number; // 1:login 2:register
 }

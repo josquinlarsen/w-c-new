@@ -14,7 +14,17 @@ export const USER = {
     last_name: '',
     password1: '',
     password2: ''
-}
+};
+
+export const LOGIN_FORM = [
+    {name:"username", label:"username", type:"text", required:true},
+    {name:"password", label:"password", type:"text", required:true}
+];
+
+export const LOGIN = {
+    username: "",
+    password: ""
+};
 
 export const PUP_FORM = [
     { name: "pup_name", label: "Pup Name", type: "text", placeholder: "Pup Name", required: true },
@@ -40,7 +50,7 @@ export const RECORD = {
     vet_phone_number: '',
     cost: '',
     record_note: ''
-}
+};
 
 export const PUP_RECORD_FORM = [
     { name: "record_type", label: "Record Type", type: "text", placeholder: "Record Type", required: true },
