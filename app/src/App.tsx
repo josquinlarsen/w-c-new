@@ -12,6 +12,7 @@ import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
+import Register from './components/Register';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 
@@ -23,7 +24,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
-        <Route path="register" />
+        <Route path="register" element={<Register/>}/>
         <Route path="login" element={<Login/>}/>
         <Route path="home" element={<Dashboard />}/>
         

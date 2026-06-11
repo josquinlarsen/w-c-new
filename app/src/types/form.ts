@@ -14,10 +14,10 @@ export interface FormData {
 export interface InputFormProps {
     initialData: FormData;
     httpType: "post" | "put" | "patch";
-    onSubmit: (data: FormData | SubmitEvent<HTMLFormElement>) => void | Promise<void>;
+    onSubmit: (e: SubmitEvent<HTMLFormElement>) => void | Promise<void>;
     onCancel?: () => void;
     formFields: FormField[];
     title: string;
-    handleLoginChange? : (data: ChangeEvent<HTMLInputElement>) => void;
+    onChange? : (data: ChangeEvent<HTMLInputElement>) => void;
     userAction?: number; // 1:login 2:register
 }

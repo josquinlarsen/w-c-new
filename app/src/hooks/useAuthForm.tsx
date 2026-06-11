@@ -61,6 +61,10 @@ export const useAuthForm = (): UseAuthFormReturn => {
         });
     };
 
+    const handleCancel = () => {
+        () => {navigate('/')}
+    };
+
     return {
         formData,
         loginData,
@@ -68,5 +72,6 @@ export const useAuthForm = (): UseAuthFormReturn => {
         handleLogin,
         handleLoginChange,
         handleRegister,
+        handleCancel,
     };
 };

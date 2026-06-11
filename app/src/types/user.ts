@@ -23,4 +23,5 @@ export interface UseAuthFormReturn {
     handleLoginChange: (e: ChangeEvent<HTMLInputElement>) => void;
     handleLogin: (e: SubmitEvent<HTMLFormElement>) => Promise<void>;
     handleRegister: (e: SubmitEvent<HTMLFormElement>) => Promise<void>;
+    handleCancel: () => void;
 }

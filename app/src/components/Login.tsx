@@ -1,21 +1,20 @@
 
-import { useNavigate } from "react-router-dom";
-
 import { useAuthForm } from "../hooks/useAuthForm";
-import Form from "./Form";
 import { LOGIN_FORM } from "../utilities/FormFields";
 
+import Form from "./Form";
+
 export default function Login(){
-    const navigate = useNavigate();
-    const { loginData, handleLoginChange, handleLogin } = useAuthForm();
+    const { loginData, handleLoginChange, handleLogin, handleCancel } = useAuthForm();
+
     return(
         <>
         <Form 
             initialData={loginData}
             httpType={"post"}
-            onSubmit={handleLogin} // type?
-            onCancel={() => {navigate('/')}}
-            handleLoginChange={handleLoginChange}
+            onSubmit={handleLogin}
+            onCancel={handleCancel}
+            onChange={handleLoginChange}
             formFields={LOGIN_FORM}
             title={"Login"}
             userAction={1}

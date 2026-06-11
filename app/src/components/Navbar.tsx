@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
 
-// import { type NavBarProps } from "../types";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
     const { isLoggedIn, logout } = useAuth();
-
-    // const logout = () => {
-    //     setIsLoggedIn(false);
-    // }
-
-    const login = () => {
-        console.log("logged in!");
-        // setIsLoggedIn(true);
-    }
 
     return (
         <>
@@ -38,11 +28,8 @@ const Navbar = () => {
                 ) : (
                     <>
                     <a>Account</a>
+                    <Link to="register">Register</Link>
                     <Link to="/login">Login</Link>
-                    {/* <button
-                        className="logout-btn"
-                        onClick={login}
-                    >Login</button> */}
                     </>
                 )}
             </nav>
