@@ -10,6 +10,7 @@ import Form from './components/Form'
 import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from './utilities/FormFields';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import Dashboard from './components/Dashboard';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 
@@ -24,8 +25,8 @@ function App() {
         {/* public routes */}
         <Route path="register" />
         <Route path="login"/>
+        <Route path="home" element={<Dashboard />}/>
         
-      
         <Route element={<ProtectedRoute />}>
           {/* private routes */}
         </Route>

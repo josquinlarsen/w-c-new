@@ -33,10 +33,12 @@ nav a {
 
 .main-content { 
     display:flex;
-    justify-content: flex-start;
+    justify-content: flex-start; /* flex start better way to align side bar + content?*/
 }
 
 .sidebar {
+    /* position:absolute;
+    left:0; */
     width: 12rem;
     height:100vh;
     background-color: lightgrey;
@@ -91,4 +93,27 @@ input {
     border-radius: 5px;
     border: 1px solid black;
     color: gray;
+}
+
+/* Table */
+table { 
+    width: 75%;
+    margin-left: 3%
+}
+
+thead th {
+    text-align: center;
+}
+
+tbody td {
+    text-align: center;
+}
+
+th {
+    text-align: left;
+    font-weight: 700;
+    font-size: 90%;
+    color: lightblue;
+    text-transform: uppercase;
+    margin-right: 2%;
 }

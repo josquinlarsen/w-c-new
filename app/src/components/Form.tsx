@@ -8,7 +8,9 @@ export default function Form({
     onSubmit,
     onCancel,
     formFields,
-    title
+    title,
+    login,
+    register
 }: InputFormProps) {
     const [formData, setFormData] = useState<FormData>(initialData);
 

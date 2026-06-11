@@ -17,4 +17,6 @@ export interface InputFormProps {
     onCancel: () => void;
     formFields: FormField[];
     title: string;
+    login: boolean;
+    register: boolean;
 }
