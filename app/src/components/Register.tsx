@@ -1,9 +1,11 @@
 import Form from "./Form"
 
+import { useNavigate } from "react-router-dom";
 import { useAuthForm } from "../hooks/useAuthForm";
 import { USER_FORM } from "../utilities/FormFields";
 
 export default function Register() {
+    const navigate = useNavigate();
     const { formData, handleChange, handleRegister, handleCancel } = useAuthForm();
     return(
         <>
@@ -11,7 +13,7 @@ export default function Register() {
             initialData={formData}
             httpType={"post"}
             onSubmit={handleRegister}
-            onCancel={handleCancel}
+            onCancel={() => navigate('/')}
             onChange={handleChange}
             formFields={USER_FORM}
             title={"Register"}
