@@ -8,6 +8,8 @@ import Sidebar from './components/Sidebar'
 import Form from './components/Form'
 
 import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from './utilities/FormFields';
+import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 
@@ -17,28 +19,40 @@ function App() {
 
   return (
     <>
-    <Navbar/>
-    <main>
-      {!loggedIn? (
-        <div className='main-content'>
-        <Sidebar />
-        <div style={{padding:"1%"}}>
-          <Form 
-            initialData={RECORD}
-            httpType={"post"}
-            onSubmit={() => console.log("Submitted!")}
-            onCancel={() => console.log("Cancelled")}
-            formFields={PUP_RECORD_FORM}
-            title={"RECORD"}
-          />
-        </div>
-      </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {/* public routes */}
+        <Route path="register" />
+        <Route path="login"/>
+        
+      
+        <Route element={<ProtectedRoute />}>
+          {/* private routes */}
+        </Route>
+      </Route>
+    </Routes>
+    {/* // <Navbar/>
+    // <main>
+    //   {!loggedIn? (
+    //     <div className='main-content'>
+    //     <Sidebar />
+    //     <div style={{padding:"1%"}}>
+    //       <Form 
+    //         initialData={RECORD}
+    //         httpType={"post"}
+    //         onSubmit={() => console.log("Submitted!")}
+    //         onCancel={() => console.log("Cancelled")}
+    //         formFields={PUP_RECORD_FORM}
+    //         title={"RECORD"}
+    //       />
+    //     </div>
+    //   </div>
 
-      ): (
-        <div><p>Welcome!</p></div>
-      )}
+    //   ): (
+    //     <div><p>Welcome!</p></div>
+    //   )}
     
-    </main>
+    // </main> */}
     </>
   )
 }
