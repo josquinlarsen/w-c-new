@@ -1,12 +1,12 @@
-import Form from "./Form"
+import Form from "../../components/Form"
 
 import { useNavigate } from "react-router-dom";
-import { useAuthForm } from "../hooks/useAuthForm";
-import { USER_FORM } from "../utilities/FormFields";
+import { useAuthForm } from "../../hooks/useAuthForm";
+import { USER_FORM } from "../../utilities/FormFields";
 
 export default function Register() {
     const navigate = useNavigate();
-    const { formData, handleChange, handleRegister, handleCancel } = useAuthForm();
+    const { formData, handleChange, handleRegister } = useAuthForm();
     return(
         <>
         <Form

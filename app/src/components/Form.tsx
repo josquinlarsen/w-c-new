@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import type { ChangeEvent, SubmitEvent } from "react";
-import type { InputFormProps, FormData } from "../types";
+import type { InputFormProps } from "../types";
 
-export default function Form({
+export default function Form<T extends Record<string, any>>({
     initialData,
     httpType,
     onSubmit,
@@ -10,8 +10,8 @@ export default function Form({
     formFields,
     title,
     userAction,
-}: InputFormProps) {
-    const [formData, setFormData] = useState<FormData>(initialData);
+}: InputFormProps<T>) {
+    const [formData, setFormData] = useState<T>(initialData);
 
     useEffect(() => {
         setFormData(initialData);
@@ -28,7 +28,7 @@ export default function Form({
 
     const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit(formData);
+        await onSubmit(formData);
     };
 
     return (
@@ -36,7 +36,7 @@ export default function Form({
         <div className="form-container">
         <div>
         <h2>{title}</h2>
-            <button type="button" onClick={onCancel}>Go Back</button>
+            <button type="button" onClick={onCancel}>Back</button>
         </div>
         <form onSubmit={handleSubmit}>
             <fieldset>

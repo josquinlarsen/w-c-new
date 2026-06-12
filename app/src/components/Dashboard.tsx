@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import Form from "./Form";
 import Table from "./Table";
-import Login from "./Login";
+import Login from "../pages/user/Login";
 
 import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from '../utilities/FormFields';
 import { pupRecordsCall } from "../mockData/records";

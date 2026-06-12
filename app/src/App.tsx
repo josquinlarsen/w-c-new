@@ -11,8 +11,8 @@ import { USER_FORM, PUP_FORM, PUP_RECORD_FORM, USER, PUP, RECORD } from './utili
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from './pages/user/Login';
+import Register from './pages/user/Register';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 

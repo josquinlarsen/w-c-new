@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { useAuthForm } from "../hooks/useAuthForm";
-import { LOGIN_FORM } from "../utilities/FormFields";
+import { useAuthForm } from "../../hooks/useAuthForm";
+import { LOGIN_FORM } from "../../utilities/FormFields";
 
-import Form from "./Form";
+import Form from "../../components/Form";
 
 export default function Login(){
     const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, type SubmitEvent, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import { handleError } from "../utilities/HandleError";
 import { useAuth } from "../context/AuthContext";
 import api from "../api/client";
@@ -22,8 +22,8 @@ export const useAuthForm = (): UseAuthFormReturn => {
             password: ""
     });
 
-    const handleLogin = async (e: SubmitEvent<HTMLFormElement>): Promise<void> => {
-        e.preventDefault()
+    const handleLogin = async (loginData: LoginFormData): Promise<void> => {
+        
         const params = new URLSearchParams();
         params.append("username", loginData.username);
         params.append("password", loginData.password);
@@ -35,8 +35,7 @@ export const useAuthForm = (): UseAuthFormReturn => {
         }
     };
 
-    const handleRegister = async (e: SubmitEvent<HTMLFormElement>): Promise<void> => {
-        e.preventDefault();
+    const handleRegister = async (formData: UserFormData): Promise<void> => {
         try {
             await api.post(`/user/register`, formData);
             navigate("/login");

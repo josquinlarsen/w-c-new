@@ -1,4 +1,5 @@
-import type { ChangeEvent, SubmitEvent } from "react";
+import type { ChangeEvent } from "react";
+
 export interface FormField {
     name: string;
     label: string;
@@ -7,14 +8,14 @@ export interface FormField {
     required?: boolean;
 }
 
-export interface FormData {
+export interface InputFormData {
     [key: string] : any;
 }
 
-export interface InputFormProps {
-    initialData: FormData;
+export interface InputFormProps<T extends Record<string, any>> {
+    initialData: T;
     httpType: "post" | "put" | "patch";
-    onSubmit: (e: SubmitEvent<HTMLFormElement>) => void | Promise<void>;
+    onSubmit: (data: T) => void | Promise<void>; //e: SubmitEvent<HTMLFormElement
     onCancel?: () => void;
     formFields: FormField[];
     title: string;

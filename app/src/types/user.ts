@@ -1,6 +1,6 @@
 // type Email = `${string}@${string}.${string}`;
 
-import type { ChangeEvent, SubmitEvent } from "react";
+import type { ChangeEvent } from "react";
 
 export interface UserFormData {
     username: string;
@@ -21,7 +21,7 @@ export interface UseAuthFormReturn {
     loginData: LoginFormData;
     handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
     handleLoginChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    handleLogin: (e: SubmitEvent<HTMLFormElement>) => Promise<void>;
-    handleRegister: (e: SubmitEvent<HTMLFormElement>) => Promise<void>;
+    handleLogin: (data: LoginFormData) => Promise<void>;
+    handleRegister: (data: UserFormData) => Promise<void>;
     handleCancel: () => void;
 }
