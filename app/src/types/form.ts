@@ -12,9 +12,11 @@ export interface InputFormData {
     [key: string] : any;
 }
 
+export type HttpOptions = "post" | "put" | "patch";
+
 export interface InputFormProps<T extends Record<string, any>> {
     initialData: T;
-    httpType: "post" | "put" | "patch";
+    httpType: string;
     onSubmit: (data: T) => void | Promise<void>; //e: SubmitEvent<HTMLFormElement
     onCancel?: () => void;
     formFields: FormField[];

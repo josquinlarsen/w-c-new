@@ -13,6 +13,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
 import Login from './pages/user/Login';
 import Register from './pages/user/Register';
+import PupForm from './pages/pups/PupForm';
 
 const testUser = { username: "Test", email: "email@email.com", first_name: "Test", last_name: "User", password1: "", password2: ""}
 
@@ -26,7 +27,9 @@ function App() {
         {/* public routes */}
         <Route path="register" element={<Register/>}/>
         <Route path="login" element={<Login/>}/>
+
         <Route path="home" element={<Dashboard />}/>
+        <Route path="addPup" element = {<PupForm httpType={"post"} title={"Add Pup"}/>} />
         
         <Route element={<ProtectedRoute />}>
           {/* private routes */}

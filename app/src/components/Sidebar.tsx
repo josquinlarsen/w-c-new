@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Sidebar = () => {
     
     const pups : Array<String> = ["Pup1", "Pup2", "Pup3"];
@@ -7,7 +9,7 @@ const Sidebar = () => {
         <div className="sidebar">
             <div className="mini-menu">
                 <h3>My Pups</h3>
-                <a>Add</a>
+                <Link to="/addPup" >+</Link>
             </div>
             { pups?.map(
                 pup => (
