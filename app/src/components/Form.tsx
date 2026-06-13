@@ -34,8 +34,8 @@ export default function Form<T extends Record<string, any>>({
     return (
         <>
         <div className="form-container">
-        <div>
-        <h2>{title}</h2>
+        <div className="form-header">
+            <h2>{title}</h2>
             <button type="button" onClick={onCancel}>Back</button>
         </div>
         <form onSubmit={handleSubmit}>
